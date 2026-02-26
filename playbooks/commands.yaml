@@ -1,0 +1,12 @@
+commands:
+  whoami: deploy
+  uname -a: Linux decept-node 5.15.0 x86_64 GNU/Linux
+  id: uid=1001(deploy) gid=1001(deploy) groups=1001(deploy)
+  ip a: |
+    2: eth0: <BROADCAST,UP> mtu 1500
+        inet 10.20.30.45/24 brd 10.20.30.255
+  ifconfig: |
+    eth0  inet 10.20.30.45  netmask 255.255.255.0
+  sudo -l: |
+    User deploy may run the following commands:
+        (ALL) NOPASSWD: /usr/bin/docker

@@ -1,0 +1,36 @@
+/:
+  type: dir
+  children:
+    etc:
+      type: dir
+      children:
+        passwd:
+          type: file
+          content: |
+            root:x:0:0:root:/root:/bin/bash
+            deploy:x:1000:1000:Deployment User:/home/deploy:/bin/bash
+            backup:x:1001:1001:Backup:/var/backups:/usr/sbin/nologin
+    var:
+      type: dir
+      children:
+        www:
+          type: dir
+          children:
+            config.php:
+              type: file
+              content: |
+                <?php
+                $db_user="admin";
+                $db_pass="P@ssw0rd123";
+                $db_host="localhost";
+                ?>
+    root:
+      type: dir
+      children:
+        notes.txt:
+          type: file
+          content: |
+            TODO:
+            - Rotate DB credentials
+            - Remove backup user
+            - Check cron jobs
