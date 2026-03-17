@@ -26,11 +26,34 @@ def cat(path, cwd):
     return node["content"]
 
 def cd(path, cwd):
+
+    # handle cd ..
+    if path == "..":
+        if cwd == "/":
+            return "/"
+
+        parts = cwd.strip("/").split("/")
+        parts = parts[:-1]
+
+        if not parts:
+            return "/"
+
+        return "/" + "/".join(parts)
+
+    # handle cd .
+    if path == ".":
+        return cwd
+
     node = resolve(path, cwd)
+
     if not node or node["type"] != "dir":
         return cwd
+
     if not path.startswith("/"):
+        if cwd == "/":
+            return "/" + path
         return cwd.rstrip("/") + "/" + path
+
     return path
 
 def pwd(cwd):

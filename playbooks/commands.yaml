@@ -1,12 +1,82 @@
 commands:
-  whoami: deploy
-  uname -a: Linux decept-node 5.15.0 x86_64 GNU/Linux
-  id: uid=1001(deploy) gid=1001(deploy) groups=1001(deploy)
+
+  whoami: root
+
+  id: |
+    uid=0(root) gid=0(root) groups=0(root)
+
+  hostname: svr04
+
+  uname: Linux
+
+  uname -a: |
+    Linux svr04 5.15.0-78-generic #85-Ubuntu SMP x86_64 GNU/Linux
+
+  uptime: |
+    14:22:11 up 23 days, 4:12, 2 users, load average: 0.02, 0.03, 0.01
+
+  free: |
+    Mem: 7972 total, 4021 free
+
+  free -m: |
+    Mem: 7972 total, 4021 free
+
+  df: |
+    Filesystem      Size  Used Avail Use% Mounted on
+    /dev/sda1        40G   18G   20G  47% /
+
+  df -h: |
+    Filesystem      Size  Used Avail Use% Mounted on
+    /dev/sda1        40G   18G   20G  47% /
+
+  ps: |
+    PID TTY          TIME CMD
+      1 ?        00:00:03 systemd
+    430 ?        00:01:22 mysqld
+    812 ?        00:00:04 nginx
+
+  ps aux: |
+    USER       PID %CPU %MEM COMMAND
+    root         1  0.0  0.1 systemd
+    mysql      430  0.2  1.5 mysqld
+    www-data   812  0.0  0.4 nginx
+
   ip a: |
     2: eth0: <BROADCAST,UP> mtu 1500
-        inet 10.20.30.45/24 brd 10.20.30.255
+        inet 192.168.1.24/24
+
   ifconfig: |
-    eth0  inet 10.20.30.45  netmask 255.255.255.0
+    eth0  inet 192.168.1.24  netmask 255.255.255.0
+
+  netstat: |
+    tcp 0 0 0.0.0.0:22 LISTEN
+    tcp 0 0 0.0.0.0:80 LISTEN
+    tcp 0 0 0.0.0.0:3306 LISTEN
+
+  netstat -tulnp: |
+    tcp 0 0 0.0.0.0:22 LISTEN 1221/sshd
+    tcp 0 0 0.0.0.0:80 LISTEN 1321/nginx
+    tcp 0 0 0.0.0.0:3306 LISTEN 1502/mysqld
+
+  docker: |
+    Docker version 24.0.2
+
+  docker ps: |
+    CONTAINER ID IMAGE STATUS
+    a21f9e9 nginx Up 2 days
+
+  apt: |
+    Reading package lists... Done
+
+  apt update: |
+    Hit:1 http://archive.ubuntu.com jammy
+
+  apt list --installed: |
+    nginx
+    mysql-server
+    docker
+    python3
+
   sudo -l: |
-    User deploy may run the following commands:
+    User root may run the following commands:
         (ALL) NOPASSWD: /usr/bin/docker
