@@ -1,5 +1,5 @@
 import yaml
-from filesystem import ls, cat, cd, pwd
+from filesystem import ls, cat, cd, pwd, touch, mkdir, rm
 
 PLAYBOOK = yaml.safe_load(open("playbooks/commands.yaml"))
 
@@ -19,6 +19,24 @@ def handle(cmdline, state):
     if cmd == "ls":
         path = args[1] if len(args) > 1 else ""
         return ls(path, state["cwd"])
+    # -------------------------
+    # write filesystem commands
+    # -------------------------
+
+    if cmd == "touch":
+        if len(args) < 2:
+            return "touch: missing file"
+        return touch(args[1], state["cwd"])
+
+    if cmd == "mkdir":
+        if len(args) < 2:
+            return "mkdir: missing directory"
+        return mkdir(args[1], state["cwd"])
+
+    if cmd == "rm":
+        if len(args) < 2:
+            return "rm: missing file"
+        return rm(args[1], state["cwd"])
 
     if cmd == "cat":
         if len(args) < 2:
