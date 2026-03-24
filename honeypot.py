@@ -63,8 +63,26 @@ def client_handler(client, addr):
         if output:
             channel.send(output + "\n")
 
+        # -------------------------------
+        # UPDATED LOGGING (ONLY CHANGE)
+        # -------------------------------
+        tag = ""
+
+        if "curl -O" in cmd or "wget" in cmd:
+            tag = "[PAYLOAD_DOWNLOAD]"
+        elif cmd.startswith("./"):
+            tag = "[SCRIPT_EXECUTION]"
+        elif "tar" in cmd:
+            tag = "[DATA_COLLECTION]"
+        elif "curl -X POST" in cmd:
+            tag = "[DATA_EXFIL]"
+        elif "history -c" in cmd:
+            tag = "[COVER_TRACKS]"
+
+        os.makedirs("logs", exist_ok=True)
+
         with open("logs/sessions.log", "a") as f:
-            f.write(f"{datetime.now()} {addr} CMD={cmd} CWD={state['cwd']}\n")
+            f.write(f"{datetime.now()} {addr} CMD={cmd} {tag} CWD={state['cwd']}\n")
 
     channel.close()
 
