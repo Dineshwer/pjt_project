@@ -1,5 +1,37 @@
 import yaml
+import os
 from filesystem import ls, cat, cd, pwd, touch, mkdir, rm
+
+LOG_FILE = "logs/sessions.log"
+
+def handle_history(command):
+    command = command.strip()
+
+    # If log file doesn't exist
+    if not os.path.exists(LOG_FILE):
+        return ""
+
+    # 🔥 Clear history
+    if command == "history -c":
+        open(LOG_FILE, "w").close()
+        return "History cleared.\n"
+
+    # 📜 Show history
+    elif command == "history":
+        with open(LOG_FILE, "r") as f:
+            lines = f.readlines()
+
+        # OPTIONAL: clean output (remove metadata)
+        cleaned = []
+        for line in lines:
+            if "]" in line:
+                cleaned.append(line.split("]")[-1].strip())
+            else:
+                cleaned.append(line.strip())
+
+        return "\n".join(cleaned) + ("\n" if cleaned else "")
+
+    return None
 
 PLAYBOOK = yaml.safe_load(open("playbooks/commands.yaml"))
 
@@ -11,6 +43,10 @@ def handle(cmdline, state):
         return ""
 
     cmd = args[0]
+
+    history_output = handle_history(cmdline)
+    if history_output is not None:
+        return history_output
 
     # -------------------------
     # filesystem commands
